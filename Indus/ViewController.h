@@ -10,6 +10,6 @@
 
 @interface ViewController : UIViewController
 
-
+@property (strong, nonatomic) UIWindow *window;
 @end
 
