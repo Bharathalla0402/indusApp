@@ -16,6 +16,7 @@
 #import "UIFloatLabelTextField.h"
 #import "BookingConfirmViewController.h"
 #import "NotificationViewController.h"
+#import "CashCounterViewController.h"
 
 
 @interface PatientBookingViewController ()<ApiRequestdelegate,UITextFieldDelegate,CKCalendarDelegate>
@@ -644,18 +645,25 @@
         txtAddress.text=@"";
         txtComments.text=@"";
         
-        BookingConfirmViewController *confirm=[self.storyboard instantiateViewControllerWithIdentifier:@"BookingConfirmViewController"];
-        confirm.strId=[[responseToken valueForKey:@"data"] valueForKey:@"id"];
-        confirm.strName=txtName.text;
-        confirm.strEmailId=txtEmail.text;
-        confirm.strPhone=txtPhone.text;
-        [self.navigationController pushViewController:confirm animated:YES];
+        CashCounterViewController *cash=[self.storyboard instantiateViewControllerWithIdentifier:@"CashCounterViewController"];
+        cash.strId=[[responseToken valueForKey:@"data"] valueForKey:@"id"];
+        [self.navigationController pushViewController:cash animated:YES];
+        
+//        BookingConfirmViewController *confirm=[self.storyboard instantiateViewControllerWithIdentifier:@"BookingConfirmViewController"];
+//        confirm.strId=[[responseToken valueForKey:@"data"] valueForKey:@"id"];
+//        confirm.strName=txtName.text;
+//        confirm.strEmailId=txtEmail.text;
+//        confirm.strPhone=txtPhone.text;
+//        [self.navigationController pushViewController:confirm animated:YES];
     }
     else
     {
         [requested showMessage:[responseToken valueForKey:@"message"] withTitle:@""];
     }
 }
+
+
+
 
 
 

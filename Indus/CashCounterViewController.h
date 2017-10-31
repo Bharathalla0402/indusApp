@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CashCounterViewController : UIViewController
+@property(nonatomic,retain) NSString *strId;
 @property (strong, nonatomic) UIWindow *window;
 @end

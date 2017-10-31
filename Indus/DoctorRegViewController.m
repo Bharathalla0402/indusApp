@@ -13,6 +13,7 @@
 #import "DoctorLoginViewController.h"
 #import "VerifyOtpViewController.h"
 #import "DejalActivityView.h"
+#import "UIFloatLabelTextField.h"
 
 @interface DoctorRegViewController ()<ApiRequestdelegate,UITextFieldDelegate>
 {
@@ -20,7 +21,11 @@
     UIScrollView *categoryScrollView;
     UILabel *NoticationLab;
     
-    ACFloatingTextField *txtName,*txtEmail,*txtPhone;
+   // ACFloatingTextField *txtName,*txtEmail,*txtPhone;
+    
+    UIFloatLabelTextField *txtName,*txtEmail,*txtPhone;
+    
+    UILabel *linelabel2,*linelabel3,*linelabel4;
 }
 @end
 
@@ -91,7 +96,8 @@
     [categoryScrollView addSubview:textlab];
     
     
-    txtName=[[ACFloatingTextField alloc]initWithFrame:CGRectMake(15, textlab.frame.size.height+textlab.frame.origin.y+30, self.view.frame.size.width-30, 50)];
+    txtName=[[UIFloatLabelTextField alloc]initWithFrame:CGRectMake(10, textlab.frame.size.height+textlab.frame.origin.y+30, self.view.frame.size.width-20, 50)];
+    txtName.placeholder = @"Name";
     NSAttributedString *str1 = [[NSAttributedString alloc] initWithString:@"Name" attributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:93.0/255.0f green:181.0/255.0f blue:80.0/255.0f alpha:1.0] }];
     txtName.attributedPlaceholder = str1;
     txtName.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
@@ -102,8 +108,13 @@
     txtName.returnKeyType = UIReturnKeyNext;
     [categoryScrollView addSubview:txtName];
     
+    linelabel2=[[UILabel alloc]initWithFrame:CGRectMake(15, txtName.frame.size.height+txtName.frame.origin.y, self.view.frame.size.width-30, 2)];
+    linelabel2.backgroundColor=[UIColor colorWithRed:93.0/255.0f green:181.0/255.0f blue:80.0/255.0f alpha:1.0];
+    [categoryScrollView addSubview:linelabel2];
     
-    txtEmail=[[ACFloatingTextField alloc]initWithFrame:CGRectMake(15, txtName.frame.size.height+txtName.frame.origin.y+30, self.view.frame.size.width-30, 50)];
+    
+    txtEmail=[[UIFloatLabelTextField alloc]initWithFrame:CGRectMake(10, txtName.frame.size.height+txtName.frame.origin.y+30, self.view.frame.size.width-20, 50)];
+     txtEmail.placeholder = @"Email";
     NSAttributedString *str2 = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:93.0/255.0f green:181.0/255.0f blue:80.0/255.0f alpha:1.0] }];
     txtEmail.attributedPlaceholder = str2;
     txtEmail.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
@@ -115,9 +126,14 @@
     txtEmail.returnKeyType = UIReturnKeyNext;
     [categoryScrollView addSubview:txtEmail];
     
+    linelabel3=[[UILabel alloc]initWithFrame:CGRectMake(15, txtEmail.frame.size.height+txtEmail.frame.origin.y, self.view.frame.size.width-30, 2)];
+    linelabel3.backgroundColor=[UIColor colorWithRed:93.0/255.0f green:181.0/255.0f blue:80.0/255.0f alpha:1.0];
+    [categoryScrollView addSubview:linelabel3];
     
     
-    txtPhone=[[ACFloatingTextField alloc]initWithFrame:CGRectMake(15, txtEmail.frame.size.height+txtEmail.frame.origin.y+30, self.view.frame.size.width-30, 50)];
+    
+    txtPhone=[[UIFloatLabelTextField alloc]initWithFrame:CGRectMake(10, txtEmail.frame.size.height+txtEmail.frame.origin.y+30, self.view.frame.size.width-20, 50)];
+    txtPhone.placeholder = @"Mobile";
     NSAttributedString *str3 = [[NSAttributedString alloc] initWithString:@"Mobile" attributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:93.0/255.0f green:181.0/255.0f blue:80.0/255.0f alpha:1.0] }];
     txtPhone.attributedPlaceholder = str3;
     txtPhone.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
@@ -128,6 +144,10 @@
     [txtPhone setKeyboardType:UIKeyboardTypeNumberPad];
     txtPhone.returnKeyType = UIReturnKeyDone;
     [categoryScrollView addSubview:txtPhone];
+    
+    linelabel4=[[UILabel alloc]initWithFrame:CGRectMake(15, txtPhone.frame.size.height+txtPhone.frame.origin.y, self.view.frame.size.width-30, 2)];
+    linelabel4.backgroundColor=[UIColor colorWithRed:93.0/255.0f green:181.0/255.0f blue:80.0/255.0f alpha:1.0];
+    [categoryScrollView addSubview:linelabel4];
     
     
     UIButton *RegisterButton=[[UIButton alloc] initWithFrame:CGRectMake(15, txtPhone.frame.size.height+txtPhone.frame.origin.y+50, self.view.frame.size.width-30, 50)];
@@ -308,12 +328,114 @@
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    [(ACFloatingTextField *)textField textFieldDidBeginEditing];
+    if (textField==txtName)
+    {
+        if ([txtName.text isEqual:@""])
+        {
+            linelabel2.backgroundColor=[UIColor colorWithRed:93.0/255.0f green:181.0/255.0f blue:80.0/255.0f alpha:1.0];
+            
+           NSAttributedString *str1 = [[NSAttributedString alloc] initWithString:@"Name" attributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:93.0/255.0f green:181.0/255.0f blue:80.0/255.0f alpha:1.0] }];
+            txtName.attributedPlaceholder = str1;
+            txtName.textColor=[UIColor colorWithRed:49.0/255.0f green:89.0/255.0f blue:168.0/255.0f alpha:1.0];
+        }
+        else
+        {
+            linelabel2.backgroundColor=[UIColor colorWithRed:49.0/255.0f green:89.0/255.0f blue:168.0/255.0f alpha:1.0];
+            txtName.textColor=[UIColor colorWithRed:49.0/255.0f green:89.0/255.0f blue:168.0/255.0f alpha:1.0];
+        }
+    }
+    else if (textField==txtEmail)
+    {
+        if ([txtEmail.text isEqual:@""])
+        {
+            linelabel3.backgroundColor=[UIColor colorWithRed:93.0/255.0f green:181.0/255.0f blue:80.0/255.0f alpha:1.0];
+            
+            NSAttributedString *str2 = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:93.0/255.0f green:181.0/255.0f blue:80.0/255.0f alpha:1.0] }];
+            txtEmail.attributedPlaceholder = str2;
+            txtEmail.textColor=[UIColor colorWithRed:49.0/255.0f green:89.0/255.0f blue:168.0/255.0f alpha:1.0];
+        }
+        else
+        {
+            linelabel3.backgroundColor=[UIColor colorWithRed:49.0/255.0f green:89.0/255.0f blue:168.0/255.0f alpha:1.0];
+            txtEmail.textColor=[UIColor colorWithRed:49.0/255.0f green:89.0/255.0f blue:168.0/255.0f alpha:1.0];
+        }
+    }
+    else if (textField==txtPhone)
+    {
+        if ([txtPhone.text isEqual:@""])
+        {
+            linelabel4.backgroundColor=[UIColor colorWithRed:93.0/255.0f green:181.0/255.0f blue:80.0/255.0f alpha:1.0];
+            
+            NSAttributedString *str3= [[NSAttributedString alloc] initWithString:@"Mobile" attributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:93.0/255.0f green:181.0/255.0f blue:80.0/255.0f alpha:1.0]  }];
+            txtPhone.attributedPlaceholder = str3;
+            txtPhone.textColor=[UIColor colorWithRed:49.0/255.0f green:89.0/255.0f blue:168.0/255.0f alpha:1.0];
+        }
+        else
+        {
+           linelabel4.backgroundColor=[UIColor colorWithRed:49.0/255.0f green:89.0/255.0f blue:168.0/255.0f alpha:1.0];
+            txtPhone.textColor=[UIColor colorWithRed:49.0/255.0f green:89.0/255.0f blue:168.0/255.0f alpha:1.0];
+        }
+    }
+    else
+    {
+       [(ACFloatingTextField *)textField textFieldDidBeginEditing];
+    }
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    [(ACFloatingTextField *)textField textFieldDidEndEditing];
+    if (textField==txtName)
+    {
+        if ([txtName.text isEqual:@""])
+        {
+            linelabel2.backgroundColor=[UIColor colorWithRed:93.0/255.0f green:181.0/255.0f blue:80.0/255.0f alpha:1.0];
+            
+            NSAttributedString *str1 = [[NSAttributedString alloc] initWithString:@"Name" attributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:93.0/255.0f green:181.0/255.0f blue:80.0/255.0f alpha:1.0] }];
+            txtName.attributedPlaceholder = str1;
+            txtName.textColor=[UIColor colorWithRed:49.0/255.0f green:89.0/255.0f blue:168.0/255.0f alpha:1.0];
+        }
+        else
+        {
+            linelabel2.backgroundColor=[UIColor colorWithRed:49.0/255.0f green:89.0/255.0f blue:168.0/255.0f alpha:1.0];
+            txtName.textColor=[UIColor colorWithRed:49.0/255.0f green:89.0/255.0f blue:168.0/255.0f alpha:1.0];
+        }
+    }
+    else if (textField==txtEmail)
+    {
+        if ([txtEmail.text isEqual:@""])
+        {
+            linelabel3.backgroundColor=[UIColor colorWithRed:93.0/255.0f green:181.0/255.0f blue:80.0/255.0f alpha:1.0];
+            
+            NSAttributedString *str2 = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:93.0/255.0f green:181.0/255.0f blue:80.0/255.0f alpha:1.0]  }];
+            txtEmail.attributedPlaceholder = str2;
+            txtEmail.textColor=[UIColor colorWithRed:49.0/255.0f green:89.0/255.0f blue:168.0/255.0f alpha:1.0];
+        }
+        else
+        {
+            linelabel3.backgroundColor=[UIColor colorWithRed:49.0/255.0f green:89.0/255.0f blue:168.0/255.0f alpha:1.0];
+            txtEmail.textColor=[UIColor colorWithRed:49.0/255.0f green:89.0/255.0f blue:168.0/255.0f alpha:1.0];
+        }
+    }
+    else if (textField==txtPhone)
+    {
+        if ([txtPhone.text isEqual:@""])
+        {
+            linelabel4.backgroundColor=[UIColor colorWithRed:93.0/255.0f green:181.0/255.0f blue:80.0/255.0f alpha:1.0];
+            
+            NSAttributedString *str3= [[NSAttributedString alloc] initWithString:@"Mobile" attributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:93.0/255.0f green:181.0/255.0f blue:80.0/255.0f alpha:1.0]  }];
+            txtPhone.attributedPlaceholder = str3;
+            txtPhone.textColor=[UIColor colorWithRed:49.0/255.0f green:89.0/255.0f blue:168.0/255.0f alpha:1.0];
+        }
+        else
+        {
+            linelabel4.backgroundColor=[UIColor colorWithRed:49.0/255.0f green:89.0/255.0f blue:168.0/255.0f alpha:1.0];
+            txtPhone.textColor=[UIColor colorWithRed:49.0/255.0f green:89.0/255.0f blue:168.0/255.0f alpha:1.0];
+        }
+    }
+    else
+    {
+        [(ACFloatingTextField *)textField textFieldDidBeginEditing];
+    }
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField

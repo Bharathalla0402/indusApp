@@ -14,7 +14,9 @@
 #import "DejalActivityView.h"
 
 @interface CashCounterViewController ()<ApiRequestdelegate>
-
+{
+    ApiRequest *requested;
+}
 @end
 
 @implementation CashCounterViewController
@@ -38,12 +40,34 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    requested=[[ApiRequest alloc]init];
+    requested.delegate=self;
+    
+    
+    NSString *post = [NSString stringWithFormat:@"id=%@&payment_method=%@",_strId,@"Cash"];
+    NSString *strurl=[NSString stringWithFormat:@"%@%@",BaseUrl,RequestAppointment];
+    [requested sendRequest4:post withUrl:strurl];
+    
     
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:93.0/255.0f green:181.0/255.0f blue:80.0/255.0f alpha:1.0];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
     
+}
+
+-(void)responsewithToken4:(NSMutableDictionary *)responseToken
+{
+    NSString *strstatus=[NSString stringWithFormat:@"%@",[responseToken valueForKey:@"status"]];
+    
+    if([strstatus isEqualToString:@"1"])
+    {
+        
+    }
+    else
+    {
+      //  [requested showMessage:[responseToken valueForKey:@"message"] withTitle:@""];
+    }
 }
 
 

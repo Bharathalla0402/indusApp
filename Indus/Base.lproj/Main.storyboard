@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lPQ-XL-UZo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lPQ-XL-UZo">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,6 +15,9 @@
         </array>
         <array key="OpenSans-Regular.ttf">
             <string>OpenSans-Regular</string>
+        </array>
+        <array key="OpenSans-SemiBold.ttf">
+            <string>OpenSans-SemiBold</string>
         </array>
     </customFonts>
     <scenes>
@@ -605,12 +608,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJZ-Ii-lo5">
-                                <rect key="frame" x="10" y="378" width="145" height="50"/>
+                                <rect key="frame" x="20" y="378" width="280" height="50"/>
                                 <color key="backgroundColor" red="0.36470588235294116" green="0.70980392156862748" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Inz-LP-j9Z"/>
+                                    <constraint firstAttribute="height" constant="50" id="nFj-Vf-ASK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="15"/>
                                 <state key="normal" title="Make Another Booking">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -638,22 +641,9 @@
                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dP1-dV-qdJ">
-                                <rect key="frame" x="165" y="378" width="145" height="50"/>
-                                <color key="backgroundColor" red="0.36470588240000001" green="0.70980392160000005" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
-                                <state key="normal" title="Dashboard">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="gotoDashboardClick:" destination="azm-9p-NAr" eventType="touchUpInside" id="evh-9C-J40"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="MIt-8M-7cr" firstAttribute="top" secondItem="dP1-dV-qdJ" secondAttribute="bottom" constant="52" id="2hA-PD-qZL"/>
                             <constraint firstItem="jup-dq-oRk" firstAttribute="leading" secondItem="jIS-2L-ZSF" secondAttribute="leading" constant="16" id="68X-ik-wMs"/>
                             <constraint firstItem="dcQ-lm-YYE" firstAttribute="leading" secondItem="jIS-2L-ZSF" secondAttribute="leading" constant="16" id="6dd-GW-z8G"/>
                             <constraint firstItem="tnh-HM-zWs" firstAttribute="top" secondItem="jup-dq-oRk" secondAttribute="bottom" constant="7" id="8PL-lA-dNU"/>
@@ -661,28 +651,26 @@
                             <constraint firstItem="jNJ-Ec-ewJ" firstAttribute="top" secondItem="AFe-fa-MPN" secondAttribute="bottom" constant="7" id="8gA-eg-lpf"/>
                             <constraint firstItem="jNJ-Ec-ewJ" firstAttribute="leading" secondItem="jIS-2L-ZSF" secondAttribute="leading" constant="16" id="CGu-Y2-JrH"/>
                             <constraint firstAttribute="trailing" secondItem="A8L-ga-wad" secondAttribute="trailing" constant="16" id="DOF-qV-mgG"/>
-                            <constraint firstItem="tJZ-Ii-lo5" firstAttribute="leading" secondItem="jIS-2L-ZSF" secondAttribute="leading" constant="10" id="Doe-mf-KVv"/>
                             <constraint firstItem="dcQ-lm-YYE" firstAttribute="top" secondItem="A8L-ga-wad" secondAttribute="bottom" constant="7" id="E94-Lw-8aH"/>
-                            <constraint firstAttribute="trailing" secondItem="dP1-dV-qdJ" secondAttribute="trailing" constant="10" id="Eee-WC-6DI"/>
                             <constraint firstItem="le9-F5-peJ" firstAttribute="leading" secondItem="jIS-2L-ZSF" secondAttribute="leading" constant="16" id="I4Q-OE-6zV"/>
                             <constraint firstItem="AFe-fa-MPN" firstAttribute="leading" secondItem="jIS-2L-ZSF" secondAttribute="leading" constant="16" id="Ml6-6h-8Z4"/>
                             <constraint firstAttribute="trailing" secondItem="jNJ-Ec-ewJ" secondAttribute="trailing" constant="16" id="QPB-XU-Jv0"/>
+                            <constraint firstItem="MIt-8M-7cr" firstAttribute="top" secondItem="tJZ-Ii-lo5" secondAttribute="bottom" constant="52" id="TkU-Bz-i2I"/>
+                            <constraint firstAttribute="trailing" secondItem="tJZ-Ii-lo5" secondAttribute="trailing" constant="20" id="Uda-78-Dic"/>
                             <constraint firstItem="A8L-ga-wad" firstAttribute="top" secondItem="jNJ-Ec-ewJ" secondAttribute="bottom" constant="15" id="W7p-uZ-7Ve"/>
                             <constraint firstAttribute="trailing" secondItem="dcQ-lm-YYE" secondAttribute="trailing" constant="16" id="aPX-UA-NeF"/>
-                            <constraint firstItem="tJZ-Ii-lo5" firstAttribute="width" secondItem="dP1-dV-qdJ" secondAttribute="width" id="adv-gW-OYv"/>
-                            <constraint firstItem="MIt-8M-7cr" firstAttribute="top" secondItem="tJZ-Ii-lo5" secondAttribute="bottom" constant="52" id="e47-3t-vYY"/>
+                            <constraint firstItem="tJZ-Ii-lo5" firstAttribute="leading" secondItem="jIS-2L-ZSF" secondAttribute="leading" constant="20" id="avf-om-IP2"/>
+                            <constraint firstItem="tJZ-Ii-lo5" firstAttribute="centerX" secondItem="dcQ-lm-YYE" secondAttribute="centerX" id="buW-EO-rbk"/>
                             <constraint firstItem="le9-F5-peJ" firstAttribute="top" secondItem="nh5-yM-U3w" secondAttribute="bottom" constant="7" id="ftR-eS-NwL"/>
                             <constraint firstItem="A8L-ga-wad" firstAttribute="leading" secondItem="jIS-2L-ZSF" secondAttribute="leading" constant="16" id="gFO-Yp-BcD"/>
                             <constraint firstItem="jup-dq-oRk" firstAttribute="top" secondItem="fOT-B2-wNa" secondAttribute="bottom" constant="47" id="hPP-uM-re4"/>
                             <constraint firstItem="nh5-yM-U3w" firstAttribute="leading" secondItem="jIS-2L-ZSF" secondAttribute="leading" constant="16" id="iJd-yj-tls"/>
-                            <constraint firstItem="dP1-dV-qdJ" firstAttribute="height" secondItem="tJZ-Ii-lo5" secondAttribute="height" id="lZY-r2-QJu"/>
                             <constraint firstItem="tnh-HM-zWs" firstAttribute="leading" secondItem="jIS-2L-ZSF" secondAttribute="leading" constant="16" id="lyH-VH-ddA"/>
                             <constraint firstAttribute="trailing" secondItem="AFe-fa-MPN" secondAttribute="trailing" constant="16" id="mEC-DH-SX3"/>
                             <constraint firstAttribute="trailing" secondItem="nh5-yM-U3w" secondAttribute="trailing" constant="16" id="prO-GS-bb0"/>
                             <constraint firstAttribute="trailing" secondItem="tnh-HM-zWs" secondAttribute="trailing" constant="16" id="tWb-zT-b9i"/>
                             <constraint firstAttribute="trailing" secondItem="le9-F5-peJ" secondAttribute="trailing" constant="16" id="uD9-Ly-GtK"/>
                             <constraint firstAttribute="trailing" secondItem="jup-dq-oRk" secondAttribute="trailing" constant="16" id="uke-Ff-UmM"/>
-                            <constraint firstItem="dP1-dV-qdJ" firstAttribute="leading" secondItem="tJZ-Ii-lo5" secondAttribute="trailing" constant="10" id="wvP-NE-XjZ"/>
                             <constraint firstItem="nh5-yM-U3w" firstAttribute="top" secondItem="tnh-HM-zWs" secondAttribute="bottom" constant="15" id="xgI-dV-x98"/>
                         </constraints>
                     </view>
@@ -766,30 +754,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgn-S9-MB0">
-                                <rect key="frame" x="10" y="378" width="145" height="50"/>
+                                <rect key="frame" x="20" y="378" width="280" height="50"/>
                                 <color key="backgroundColor" red="0.36470588240000001" green="0.70980392160000005" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Sme-cs-3sl"/>
+                                    <constraint firstAttribute="height" constant="50" id="get-hg-DBS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="15"/>
                                 <state key="normal" title="Make Another Booking">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="AnotherBookingClick:" destination="gxM-jk-dBo" eventType="touchUpInside" id="gP5-aI-W97"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WS1-Mb-RGj">
-                                <rect key="frame" x="165" y="378" width="145" height="50"/>
-                                <color key="backgroundColor" red="0.36470588240000001" green="0.70980392160000005" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
-                                <state key="normal" title="Dashboard">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="gotoDashboardClick:" destination="gxM-jk-dBo" eventType="touchUpInside" id="fSc-up-qQy"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks for your appointment request. Hospital will confirm your appointment very soon." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNl-Pw-kwR">
@@ -813,18 +789,15 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CNl-Pw-kwR" firstAttribute="centerX" secondItem="YGe-Yf-GFm" secondAttribute="centerX" id="3wk-NH-pCj"/>
-                            <constraint firstItem="NVS-CI-1hd" firstAttribute="top" secondItem="WS1-Mb-RGj" secondAttribute="bottom" constant="52" id="5wa-hq-7cB"/>
-                            <constraint firstAttribute="trailing" secondItem="WS1-Mb-RGj" secondAttribute="trailing" constant="10" id="7xc-L4-fmh"/>
+                            <constraint firstAttribute="trailing" secondItem="wgn-S9-MB0" secondAttribute="trailing" constant="20" id="BgT-5X-2dM"/>
                             <constraint firstItem="CNl-Pw-kwR" firstAttribute="leading" secondItem="YGe-Yf-GFm" secondAttribute="leadingMargin" id="G59-Yt-ojT"/>
-                            <constraint firstItem="wgn-S9-MB0" firstAttribute="leading" secondItem="YGe-Yf-GFm" secondAttribute="leading" constant="10" id="LFa-cc-drL"/>
-                            <constraint firstItem="WS1-Mb-RGj" firstAttribute="height" secondItem="wgn-S9-MB0" secondAttribute="height" id="N8q-OK-L0n"/>
                             <constraint firstItem="CNl-Pw-kwR" firstAttribute="centerX" secondItem="3le-N9-6s7" secondAttribute="centerX" id="Q4v-wk-myC"/>
+                            <constraint firstItem="wgn-S9-MB0" firstAttribute="leading" secondItem="YGe-Yf-GFm" secondAttribute="leading" constant="20" id="YxA-LT-gV4"/>
                             <constraint firstItem="CNl-Pw-kwR" firstAttribute="centerY" secondItem="YGe-Yf-GFm" secondAttribute="centerY" id="b9s-qN-Y9J"/>
-                            <constraint firstItem="NVS-CI-1hd" firstAttribute="top" secondItem="wgn-S9-MB0" secondAttribute="bottom" constant="52" id="lDK-YL-cPT"/>
-                            <constraint firstItem="wgn-S9-MB0" firstAttribute="width" secondItem="WS1-Mb-RGj" secondAttribute="width" id="mcW-Rc-Wlg"/>
-                            <constraint firstItem="WS1-Mb-RGj" firstAttribute="leading" secondItem="wgn-S9-MB0" secondAttribute="trailing" constant="10" id="qlX-5k-zB4"/>
+                            <constraint firstItem="wgn-S9-MB0" firstAttribute="centerX" secondItem="CNl-Pw-kwR" secondAttribute="centerX" id="fls-Ca-ehg"/>
                             <constraint firstItem="3le-N9-6s7" firstAttribute="centerX" secondItem="YGe-Yf-GFm" secondAttribute="centerX" id="tOx-Ye-UOU"/>
                             <constraint firstItem="CNl-Pw-kwR" firstAttribute="top" secondItem="3le-N9-6s7" secondAttribute="bottom" constant="30" id="wS9-dL-D1Y"/>
+                            <constraint firstItem="NVS-CI-1hd" firstAttribute="top" secondItem="wgn-S9-MB0" secondAttribute="bottom" constant="52" id="wlw-W4-7F4"/>
                         </constraints>
                     </view>
                 </viewController>

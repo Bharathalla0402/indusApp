@@ -123,7 +123,6 @@
     
     [[NSUserDefaults standardUserDefaults]setObject:token forKey:@"DeviceToken"];
     [[NSUserDefaults standardUserDefaults]synchronize];
-    
 }
 
 
@@ -345,14 +344,11 @@
     
     if([strstatus isEqualToString:@"1"])
     {
-        
-       
         arrdata=[responseToken valueForKey:@"data"];
         
-         [self NotificationApi];
+        [self NotificationApi];
         
         [DejalBezelActivityView removeView];
-        
         
 //        textLab.text=[[responseToken valueForKey:@"data"] valueForKey:@"title"];
 //        textLab2.text=[[responseToken valueForKey:@"data"] valueForKey:@"description"];
@@ -368,8 +364,6 @@
 
 -(void)NotificationApi
 {
-    
-    
     footerview5=[[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     footerview5.backgroundColor = [UIColor clearColor];
     [popview5 addSubview:footerview5];
@@ -397,9 +391,7 @@
     [footerview5 addSubview:textLab2];
 
     
-    
-    
-   [self performSelector:@selector(AcceptedResponse7:) withObject:self afterDelay:5.0];
+    [self performSelector:@selector(AcceptedResponse7:) withObject:self afterDelay:5.0];
 }
 
 -(void)AcceptedResponse7:(id)sender
